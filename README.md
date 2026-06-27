@@ -1,138 +1,252 @@
-# 📘 Sistema Contable Profesional
+# Sistema Contable Profesional
 
-## 📖 Descripción
+## Descripción
 
-Sistema contable desarrollado en Python aplicando Programación Orientada a Objetos (POO) y la arquitectura Modelo-Vista-Controlador (MVC). El sistema permite la autenticación de usuarios, el registro de pólizas contables, la visualización del historial de movimientos y la generación de gráficos estadísticos.
+Sistema contable desarrollado en Python aplicando los principios de Programación Orientada a Objetos (POO) y la arquitectura Modelo-Vista-Controlador (MVC). El sistema permite la autenticación de usuarios, el registro de pólizas contables, la consulta del historial de movimientos y la visualización de gráficos estadísticos mediante una interfaz gráfica.
 
----
+## Objetivos
 
-## ✨ Características
+- Aplicar Programación Orientada a Objetos.
+- Implementar la arquitectura MVC.
+- Gestionar el registro de pólizas contables.
+- Utilizar una base de datos SQLite para almacenar la información.
+- Implementar autenticación segura mediante bcrypt.
+- Realizar pruebas unitarias utilizando pytest.
 
-- Inicio de sesión seguro con bcrypt.
-- Registro de pólizas contables.
-- Base de datos SQLite.
-- Interfaz gráfica con CustomTkinter.
-- Visualización de gráficos con Matplotlib.
-- Pruebas unitarias con pytest.
-- Arquitectura MVC.
+## Tecnologías utilizadas
 
----
-
-## 🛠 Tecnologías utilizadas
-
-- Python 3.10+
+- Python 3.10 o superior
 - SQLite
 - CustomTkinter
 - Matplotlib
 - bcrypt
 - pytest
 
----
+## Librerías externas
 
-## 📂 Estructura del proyecto
+Las siguientes librerías deben instalarse mediante `requirements.txt`:
+
+- customtkinter
+- matplotlib
+- bcrypt
+- pytest
+
+## Estructura del proyecto
 
 ```
 proyecto_de_poo_final/
 │
-├── app/
-│   ├── controllers/
-│   ├── models/
-│   ├── views/
-│   └── main.py
-│
-├── tests/
-├── docs/
-├── requirements.txt
-└── README.md
+├── sistema_contable/
+│   ├── app/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   ├── views/
+│   │   └── main.py
+│   │
+│   ├── docs/
+│   │   ├── diagrama_clases.png
+│   │   ├── proceso_desarrollo.md
+│   │   └── capturas/
+│   │       ├── login.png
+│   │       ├── dashboard.png
+│   │       ├── registro_poliza.png
+│   │       ├── grafico.png
+│   │       └── pytest.png
+│   │
+│   ├── tests/
+│   │   ├── test_poliza.py
+│   │   └── test_usuario.py
+│   │
+│   ├── requirements.txt
+│   └── README.md
 ```
 
----
+## Requisitos
 
-## 🚀 Instalación
+- Python 3.10 o superior
+- Git
+- pip
 
-Clona el repositorio:
+## Instalación
+
+Clonar el repositorio:
 
 ```bash
 git clone https://github.com/stevenagamez/proyecto_de_poo_final-.git
 ```
 
-Ingresa a la carpeta:
+Ingresar al proyecto:
 
 ```bash
-cd proyecto_de_poo_final-
+cd proyecto_de_poo_final-/sistema_contable
 ```
 
-Instala las dependencias:
+Instalar las dependencias:
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
+## Ejecución del proyecto
 
-## ▶️ Ejecución
+Desde la carpeta `sistema_contable` ejecutar:
 
 ```bash
 python -m app.main
 ```
 
----
+También es posible ejecutar:
 
-## 🧪 Ejecutar pruebas
+```bash
+python app/main.py
+```
+
+## Ejecución de pruebas
+
+Desde la carpeta `sistema_contable` ejecutar:
 
 ```bash
 pytest
 ```
 
----
+Las pruebas incluyen:
 
-## 👤 Usuario por defecto
+- Dos pruebas válidas para el modelo Poliza.
+- Una prueba inválida para el modelo Poliza.
+- Dos pruebas válidas para el modelo Usuario.
+- Una prueba inválida para el modelo Usuario.
 
-**Usuario**
+## Usuario predeterminado
+
+Al ejecutar la aplicación por primera vez se crea automáticamente el siguiente usuario:
+
+Usuario:
 
 ```
 admin
 ```
 
-**Contraseña**
+Contraseña:
 
 ```
 admin123
 ```
 
----
+## Arquitectura del proyecto
 
-## 🏗 Arquitectura
+El proyecto sigue el patrón Modelo-Vista-Controlador (MVC).
 
-El proyecto implementa el patrón Modelo-Vista-Controlador (MVC):
+### Modelo
 
-- Modelo
-- Vista
-- Controlador
+Contiene las clases que representan las entidades del sistema:
 
----
+- Usuario
+- Cuenta
+- Poliza
 
-## 📝 Proceso de desarrollo
+Estas clases encapsulan la lógica del negocio y las validaciones.
 
-El proyecto fue desarrollado siguiendo estas etapas:
+### Vista
 
-1. Diseño de la estructura del proyecto.
-2. Implementación de la arquitectura MVC.
-3. Desarrollo de los modelos.
-4. Implementación del controlador.
-5. Desarrollo de la interfaz gráfica.
-6. Integración con SQLite.
-7. Implementación del cifrado de contraseñas.
-8. Desarrollo de gráficos con Matplotlib.
-9. Creación de pruebas unitarias con pytest.
-10. Documentación y publicación en GitHub.
+Implementada mediante CustomTkinter.
 
----
+Contiene:
 
-## 👨‍💻 Autores
+- Ventana de inicio de sesión.
+- Panel principal.
+- Registro de pólizas.
+- Tabla del libro diario.
+- Visualización gráfica de datos.
+
+### Controlador
+
+Administra la comunicación entre la interfaz y los modelos.
+
+Sus principales funciones son:
+
+- Autenticar usuarios.
+- Registrar pólizas.
+- Consultar información almacenada.
+- Gestionar la base de datos SQLite.
+
+## Programación Orientada a Objetos
+
+El proyecto implementa los principales conceptos de POO:
+
+- Clases
+- Objetos
+- Encapsulamiento
+- Abstracción
+- Separación de responsabilidades
+
+## Diagrama de clases
+
+El diagrama de clases se encuentra disponible en:
+
+```
+docs/diagrama_clases.png
+```
+
+Describe las relaciones entre las clases principales del sistema y la implementación de la arquitectura MVC.
+
+## Capturas del funcionamiento
+
+Las evidencias del funcionamiento del sistema se encuentran en:
+
+```
+docs/capturas/
+```
+
+Esta carpeta incluye:
+
+- Inicio de sesión.
+- Dashboard principal.
+- Registro de pólizas.
+- Tabla de movimientos.
+- Gráfico estadístico.
+- Ejecución de las pruebas con pytest.
+
+## Proceso de desarrollo
+
+La documentación completa del proceso de desarrollo se encuentra en:
+
+```
+docs/proceso_desarrollo.md
+```
+
+En este documento se describen:
+
+- Planeación del proyecto.
+- Diseño de la arquitectura.
+- Desarrollo de los modelos.
+- Implementación del controlador.
+- Construcción de la interfaz.
+- Integración con SQLite.
+- Uso de bcrypt.
+- Implementación de gráficos.
+- Desarrollo de pruebas unitarias.
+- Problemas encontrados y soluciones.
+- Evidencias del desarrollo.
+
+## Resultados
+
+El sistema desarrollado permite:
+
+- Iniciar sesión mediante autenticación segura.
+- Registrar pólizas contables.
+- Consultar el historial de movimientos.
+- Visualizar información mediante gráficos.
+- Validar reglas de negocio utilizando Programación Orientada a Objetos.
+- Ejecutar pruebas automatizadas con pytest.
+
+## Autores
 
 - Steven Andrés Agamez Orozco
 - Rafael Saltarín Escobar
 - Handt Torres
 - José Maldonado
 - Disney Mercado
+
+## Repositorio
+
+https://github.com/stevenagamez/proyecto_de_poo_final-.git
